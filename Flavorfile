@@ -1,0 +1,3 @@
+flavor 'mattn/vim-prompter', branch: 'master'
+
+# vim: filetype=ruby

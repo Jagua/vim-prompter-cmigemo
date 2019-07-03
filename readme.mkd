@@ -1,0 +1,16 @@
+# vim-prompter-cmigemo
+
+**vim-prompter-cmigemo** is a Vim plugin to search words with migemo.
+
+This plugin depends on:
+
+* [vim-prompter](https://github.com/mattn/vim-prompter)
+
+Latest: https://github.com/Jagua/vim-prompter-cmigemo
+
+## .vimrc
+
+```vim
+nmap ;/ <Plug>(prompter-cmigemo-forward)
+nmap ;? <Plug>(prompter-cmigemo-backward)
+```
