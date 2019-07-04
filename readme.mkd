@@ -1,5 +1,7 @@
 # vim-prompter-cmigemo
 
+[![Build Status](https://travis-ci.org/Jagua/vim-prompter-cmigemo.svg?branch=master)](https://travis-ci.org/Jagua/vim-prompter-cmigemo)
+
 **vim-prompter-cmigemo** is a Vim plugin to search words with migemo.
 
 This plugin depends on:
