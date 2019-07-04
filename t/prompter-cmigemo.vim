@@ -19,8 +19,21 @@ if empty($MIGEMODICT_PATH)
 endif
 
 
+function! s:check_dependencies() abort "{{{
+  if !executable('cmigemo')
+    SKIP 'cmigemo is not installed'
+  endif
+
+  if !filereadable($MIGEMODICT_PATH)
+    execute printf('SKIP "%s is not readable"', $MIGEMODICT_PATH)
+  endif
+endfunction "}}}
+
+
 describe 'prompter-cmigemo'
   it 'should be only available if cmigemo is installed'
+    call s:check_dependencies()
+
     Expect executable('cmigemo') to_be_true
   end
 end
@@ -39,17 +52,6 @@ describe '<Plug>'
     end
   end
 end
-
-
-function! s:check_dependencies() abort "{{{
-  if !executable('cmigemo')
-    SKIP 'cmigemo is not installed'
-  endif
-
-  if !filereadable($MIGEMODICT_PATH)
-    execute printf('SKIP "%s is not readable"', $MIGEMODICT_PATH)
-  endif
-endfunction "}}}
 
 
 describe 's:'
