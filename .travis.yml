@@ -1,4 +1,26 @@
+---
 language: ruby
+
 rvm:
   - 2.6.3
+
+addons:
+  apt:
+    packages:
+      - cmigemo
+
+env:
+  global:
+    - VSPEC_VIM="${HOME}/local/bin/vim"
+
+install:
+  - git clone --depth 1 --branch master --single-branch https://github.com/vim/vim.git /tmp/vim
+  - cd /tmp/vim
+  - ./configure --with-features=huge --enable-fail-if-missing --prefix="${HOME}/local"
+  - make -j2 && make install
+  - export PATH="${HOME}/local/bin":$PATH
+  - cd "${TRAVIS_BUILD_DIR}"
+  - sudo update-cmigemo-dict
+  - bundle install --jobs=3 --retry=3
+
 script: rake ci
