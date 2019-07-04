@@ -7,6 +7,7 @@
 This plugin depends on:
 
 * [vim-prompter](https://github.com/mattn/vim-prompter)
+* [cmigemo](https://github.com/koron/cmigemo)
 
 Latest: https://github.com/Jagua/vim-prompter-cmigemo
 
