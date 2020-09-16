@@ -123,7 +123,7 @@ endfunction "}}}
 function! s:close_cb(ch) abort "{{{
   let msg = ''
   while ch_status(a:ch, {'part' : 'out'}) ==# 'buffered'
-    let msg .= ch_read(a:ch)
+    let msg .= ch_read(a:ch, {'part' : 'out'})
   endwhile
   if empty(msg)
     return
